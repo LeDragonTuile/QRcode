@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Attention aux QR Codes</title>
   <style>
     html, body {
@@ -11,41 +12,41 @@
       color: red;
       font-family: 'Courier New', Courier, monospace;
       height: 100%;
-      overflow-y: auto; /* ✅ Active la barre de défilement verticale */
+      overflow-y: auto;
     }
 
     .container {
       max-width: 1000px;
-      margin: 0 auto; /* ✅ Centre le conteneur horizontalement */
+      margin: 0 auto;
       padding: 10vh 5vw;
       text-align: center;
     }
 
     h1 {
-      font-size: 3em;
+      font-size: 6vw; /* ✅ Taille relative à l'écran */
       animation: glitch 1s infinite;
     }
 
     p {
-      font-size: 1.5em;
+      font-size: 4vw;
       margin-top: 2em;
     }
 
     .warning {
-      color: white;
-      background: red;
+      color: background: red;
       padding: 1em;
       margin-top: 3em;
       display: inline-block;
       font-weight: bold;
       border: 3px solid white;
       animation: pulse 2s infinite;
+      font-size: 4vw;
     }
 
     img {
       display: block;
       margin: 2em auto;
-      max-width: 80%;
+      max-width: 90%;
       height: auto;
     }
 
@@ -70,6 +71,13 @@
       left: 0;
       z-index: -1;
     }
+
+    /* ✅ Adaptation mobile */
+    @media (max-width: 600px) {
+      h1, p, .warning {
+        font-size: 5vw;
+      }
+    }
   </style>
 </head>
 <body>
@@ -78,8 +86,6 @@
     <h1>⚠️ Ne scannez pas n'importe quoi ⚠️</h1>
     <p>Un simple QR code peut voler vos données, installer un virus ou vous piéger.</p>
     <div class="warning">Réfléchissez avant de scanner.</div>
-
-    <!-- ✅ Image bien centrée -->
     <img src="affiche qrcode FR.png" alt="Affiche de sensibilisation QR code">
   </div>
 
